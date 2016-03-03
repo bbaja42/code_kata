@@ -1,5 +1,7 @@
 class Meme
   def add(input)
-    input.to_i
+    arguments = input.split(",")
+    return 0 if arguments.empty?
+    arguments.map(&:to_i).inject(:+)
   end
 end
