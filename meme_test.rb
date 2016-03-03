@@ -21,4 +21,8 @@ class TestMeme < Minitest::Test
   def test_method_can_take_many_comma_separated_numbers
     assert_equal 15, @meme.add("1,2,3,4,5")
   end
+
+  def test_method_can_take_newline_delimited_numbers
+    assert_equal 6, @meme.add("1\n,2,3")
+  end
 end
