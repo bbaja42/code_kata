@@ -1,7 +1,8 @@
 require "minitest/autorun"
+require 'test/unit'
 require_relative "meme"
 
-#go away
+# go away
 class TestMeme < Minitest::Test
   def setup
     @meme = Meme.new
@@ -29,5 +30,10 @@ class TestMeme < Minitest::Test
 
   def test_method_can_take_custom_delimiter
     assert_equal 3, @meme.add("//;\n1;2")
+  end
+
+  def test_method_raise_error_when_one_negative_number
+    err = -> { @meme.add("//;\n1;2;-1") }.must_raise NegativeNumberNotAllowed
+    err.message.must_match "-1"
   end
 end
