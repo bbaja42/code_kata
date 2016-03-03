@@ -1,5 +1,5 @@
 class Meme
   def add(input)
-    0
+    input.to_i
   end
 end
