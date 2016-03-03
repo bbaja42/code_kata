@@ -1,4 +1,5 @@
 require "minitest/autorun"
+require_relative "meme"
 
 class TestMeme < Minitest::Test
   def setup
