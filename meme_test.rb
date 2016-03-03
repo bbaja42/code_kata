@@ -1,6 +1,7 @@
 require "minitest/autorun"
 require_relative "meme"
 
+#go away
 class TestMeme < Minitest::Test
   def setup
     @meme = Meme.new
@@ -24,5 +25,9 @@ class TestMeme < Minitest::Test
 
   def test_method_can_take_newline_delimited_numbers
     assert_equal 6, @meme.add("1\n,2,3")
+  end
+
+  def test_method_can_take_custom_delimiter
+    assert_equal 3, @meme.add("//;\n1;2")
   end
 end
